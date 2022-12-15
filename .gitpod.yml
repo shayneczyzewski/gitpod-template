@@ -7,6 +7,10 @@ tasks:
       echo "REACT_APP_API_URL=$(printenv | grep "^GITPOD_WORKSPACE_URL=" | cut -d "=" -f 2 | awk '{gsub("https://","https://3001-")} 1')" >> MyNewApp/.env.client
       echo "WASP_WEB_CLIENT_URL=$(printenv | grep "^GITPOD_WORKSPACE_URL=" | cut -d "=" -f 2 | awk '{gsub("https://","https://3000-")} 1')" >> MyNewApp/.env.server
       cd MyNewApp
+      echo "node version $(node --version)"
+      echo "npm version $(npm --version)"
+      echo "which node $(which node)"
+      echo "PATH $(echo $PATH)"
       wasp db migrate-dev
       wasp start
 
